@@ -222,7 +222,7 @@ The JNI layer targets a recent llama.cpp API (`llama_vocab`, sampler chains, `ll
 
 ## License
 
-*To be decided.* (MIT is the usual choice for a project like this.)
+MIT License — free to use, modify, and distribute commercially. See [LICENSE](LICENSE).
 
 ---
 

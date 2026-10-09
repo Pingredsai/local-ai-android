@@ -231,7 +231,13 @@ const val USE_REAL_INFERENCE = true
 **llama.cpp 的 API 演进很快**，若编译报 "unknown function / no matching function"，请对照你所用版本的 `llama.h` 调整签名。这一步遇到问题把报错发我。
 
 ---
-## 8. 关联文档
+## 8. 许可
+
+MIT License —— 可自由使用、修改、商用，保留版权声明即可。详见 [LICENSE](LICENSE)。
+
+---
+
+## 9. 关联文档
 
 - `技术方案.md` —— 完整技术方案
 - `../../docs/03-作品计划.md` —— 作品计划
