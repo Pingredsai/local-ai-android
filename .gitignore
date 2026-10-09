@@ -1,0 +1,27 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx/
+local.properties
+*.apk
+*.aab
+*.keystore
+!debug.keystore
+
+# 模型文件不入库
+*.gguf
+*.bin
+models/
+
+# llama.cpp 等第三方源码（体积大，本地放置，不进仓库）
+/third_party/
+
+# 演示视频
+screenshots/demo-30s.mp4
+!screenshots/demo-fast.mp4
