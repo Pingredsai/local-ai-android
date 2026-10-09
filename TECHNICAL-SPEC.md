@@ -1,6 +1,6 @@
-# 作品 A · Android 本地大模型助手 —— 技术方案
+# LocalAI · Android 端侧大模型助手 —— 技术方案
 
-> 状态：T1-1 产出（待 Owner 确认后进入 T1-2）
+> 状态：已完成实现，并通过真机验证（Pixel 4，实测见 README）
 > 最后更新：2026-10-08
 > ⚠️ 文中涉及的库版本、模型名称、性能数字**均需在实现时核实**（生态变化极快）。
 
@@ -54,7 +54,7 @@
 理由：
 1. GGUF 生态最丰富，模型随便换——**可切换模型**是作品的加分项
 2. 遇到问题能搜到答案（社区最大）
-3. Owner 具备 Android + 算法背景，NDK/JNI 不是障碍
+3. 开发者具备 Android + 算法背景，NDK/JNI 不是障碍
 4. 性能可调（线程数、context、量化级别），便于产出性能数据
 
 **备选方案：MediaPipe LLM Inference API**
@@ -248,7 +248,7 @@ local-ai-android/
 
 **顺利半天跑通，不顺利才吃掉 1-2 天。瓶颈从来不是编译，是环境和踩坑。**
 
-### Windows 环境特别注意（Owner 当前环境）
+### Windows 环境特别注意
 
 | 坑 | 后果 | 对策 |
 |---|---|---|
@@ -310,7 +310,7 @@ local-ai-android/
 
 ## 11. 下一步
 
-- **T1-2**：搭建项目骨架（Gradle + CMake + NDK）
+- 下一步：搭建项目骨架（Gradle + CMake + NDK）
 - 前置：确认 Android Studio / NDK / CMake 环境
 - 建议：先跑通官方 `llama.android` 示例，再改造
 

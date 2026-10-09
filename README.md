@@ -1,10 +1,10 @@
-# Local AI · Android 端侧大模型助手（作品 A）
+# LocalAI · Android 端侧大模型助手
 
 > 🇬🇧 English documentation: [README.en.md](README.en.md)
 
 一台普通 Android 手机，**完全断网**也能对话的本地 AI 助手。
 
-> 当前状态：**T1-2 骨架 + T1-3 真实推理已接入（默认关闭）**。
+> 当前状态：**项目骨架 + 真实推理均已实现**（通过开关启用）。
 > 默认以 `MockEngine` 运行，**开箱即可编译**（不需要 NDK）；通过开关启用 llama.cpp 真实推理（见第 7 节）。
 
 ---
@@ -121,9 +121,9 @@ Compose UI  (ChatScreen)
 ViewModel   (ChatViewModel)
      ↓
 LlmEngine   (接口)
-     ├── MockEngine        当前
+     ├── MockEngine        默认（无需模型）
      ├── MediaPipeEngine   兜底方案
-     └── LlamaCppEngine    T1-3 接入
+     └── LlamaCppEngine    真实端侧推理
               ↓
         NativeBridge → C++ / llama.cpp
 ```
@@ -172,7 +172,7 @@ native 库没打进 APK。检查 ABI 是否匹配设备、`CMakeLists.txt` 是�
 
 > 欢迎提交你设备上的实测数据。我特别想看到**骁龙 8 Gen 2/3** 的结果，
 > 理论上同模型会快 10-20 倍。
-## 7. 启用真实端侧推理（T1-3 已实现，默认关闭）
+## 7. 启用真实端侧推理（已实现，默认关闭）
 
 native 层与 Kotlin 引擎**已全部写好**，默认通过编译开关关闭，保证项目开箱可编译。
 要跑真实推理，做 4 件事：
