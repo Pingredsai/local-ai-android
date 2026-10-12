@@ -27,12 +27,12 @@ The strongest proof is in the manifest: **this app does not request the `INTERNE
 
 ## Demo
 
-**Demo video:** [`screenshots/demo-fast.mp4`](screenshots/demo-fast.mp4) — 58 s, played at 4x speed.
+**Demo video:** [`screenshots/demo.mp4`](screenshots/demo.mp4) — 35 s, full speed (no time-lapse).
 
 What it shows:
 1. Airplane mode enabled (no network)
 2. App launched, model loaded locally
-3. Full conversation with streaming token output
+3. Full conversation with streaming output — **13.8 to 19.1 tok/s**
 4. Live performance HUD (first-token latency / tok/s / memory)
 
 | Chat | Performance HUD |

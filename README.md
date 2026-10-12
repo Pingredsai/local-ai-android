@@ -11,12 +11,12 @@
 
 ## 演示视频
 
-**[`screenshots/demo-fast.mp4`](screenshots/demo-fast.mp4)** —— 58 秒，4 倍速播放。
+**[`screenshots/demo.mp4`](screenshots/demo.mp4)** —— 35 秒，**原速播放**（无加速）。
 
 展示内容：
 1. 开启飞行模式（确认无网络）
 2. 启动 App，模型在本地加载
-3. 完整对话过程，逐字流式输出
+3. 完整对话过程，逐字流式输出 —— **13.8 - 19.1 tok/s**
 4. 顶部实时性能指标（首 token 延迟 / tok/s / 内存）
 
 ---
