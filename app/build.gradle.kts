@@ -45,7 +45,8 @@ android {
                     //   量化矩阵乘法会退化成慢速实现（实测慢 20-30 倍）。
                     //   armv8.2-a + dotprod + fp16 覆盖 2018 年后的主流中高端芯片。
                     //   若要兼容更老的设备，改成 "armv8-a"。
-                    "-DGGML_CPU_ARM_ARCH=armv8.2-a+dotprod+fp16"
+                    "-DGGML_CPU_ARM_ARCH=armv8.2-a+dotprod+fp16",
+                    "-DCMAKE_BUILD_TYPE=Release"
                 )
                 }
             }

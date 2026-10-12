@@ -17,6 +17,31 @@ project("localai" CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# ============================================================
+#  ⚠️ 关键：强制优化等级
+#
+#  Android Gradle Plugin 在 debug variant 下会向 CMake 传
+#  CMAKE_BUILD_TYPE=Debug，而 CMake 的 Debug 配置默认**不带任何
+#  -O 优化标志**（等同 -O0）。ggml 在无优化下比 Release 慢 20-50 倍。
+#
+#  实测（Pixel 4 / Qwen2.5-1.5B Q4_K_M）：
+#    -O0  → 0.5 tok/s
+#    -O3  → 见 README 的 benchmark
+#
+#  这个设置必须在 add_subdirectory(llama.cpp) 之前，否则不会生效。
+#  （诊断思路来自 DEV 读者：编译优化等级比 -march 更容易被忽略）
+# ============================================================
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_C_FLAGS_DEBUG   "-O3 -g" CACHE STRING "" FORCE)
+set(CMAKE_CXX_FLAGS_DEBUG "-O3 -g" CACHE STRING "" FORCE)
+set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-O3 -g -DNDEBUG" CACHE STRING "" FORCE)
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O3 -g -DNDEBUG" CACHE STRING "" FORCE)
+
+message(STATUS "LocalAI: CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}, 强制 -O3 优化")
+
 option(USE_LLAMA_CPP "Link against llama.cpp for real inference" OFF)
 
 add_library(localai SHARED
