@@ -157,13 +157,13 @@ Measured on real hardware — **no estimates, no marketing numbers.**
 
 | Device | SoC | Model | Quant | First token | Generation | Peak RSS |
 |---|---|---|---|---|---|---|
-| Google Pixel 4 | Snapdragon 855 (2019) | Qwen2.5-1.5B-Instruct | Q4_K_M | 1.9 s | **0.5 tok/s** | 1.3-2.0 GB |
+| Google Pixel 4 | Snapdragon 855 (2019) | Qwen2.5-1.5B-Instruct | Q4_K_M | **52 ms** | **18.5 tok/s** | ~1.3 GB |
 
 ### What this tells you
 
-- ✅ **Fully functional offline**: multi-turn conversation works, model runs entirely on CPU
-- ⚠️ **Slow on 5-year-old hardware**: 0.5 tok/s means ~2 s per token. Usable, not pleasant.
-- 📊 **CPU efficiency is the bottleneck**, not memory bandwidth (measured ~500 MB/s vs ~34 GB/s available)
+- ✅ **Fully functional offline**: 18.5 tok/s on a 2019 phone — comfortably conversational
+- ⚡ **Heads up for builders**: build with `-O3`. A Debug (`-O0`) build of ggml runs **37x slower** — I lost days to this. See [TECHNICAL-SPEC.md](TECHNICAL-SPEC.md).
+- 📊 Peak RSS ~1.3 GB; fully CPU inference, no GPU/NPU used
 
 ### Reproduce it
 
