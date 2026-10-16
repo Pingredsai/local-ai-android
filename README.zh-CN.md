@@ -19,6 +19,12 @@
 3. 完整对话过程，逐字流式输出 —— **13.8 - 19.1 tok/s**
 4. 顶部实时性能指标（首 token 延迟 / tok/s / 内存）
 
+<p align="center">
+  <a href="screenshots/01-chat-demo.png">
+    <img src="screenshots/01-chat-demo.png" width="280" alt="LocalAI 对话演示">
+  </a>
+</p>
+
 ---
 ## 1. 当前能做什么
 

@@ -33,7 +33,11 @@ What it shows:
 3. Full conversation with streaming output — **13.8 to 19.1 tok/s**
 4. Live performance HUD (first-token latency / tok/s / memory)
 
-![LocalAI chat demo](screenshots/01-chat-demo.png)
+<p align="center">
+  <a href="screenshots/01-chat-demo.png">
+    <img src="screenshots/01-chat-demo.png" width="280" alt="LocalAI chat demo">
+  </a>
+</p>
 
 ---
 
